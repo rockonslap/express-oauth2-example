@@ -100,9 +100,9 @@ const FacebookLoginService = async (payload, lang) => {
   [err, respToken] = await to(axios.get('https://graph.facebook.com/v4.0/oauth/access_token',
     {
       params: {
-        client_id: process.env.FB_APP_ID,
-        client_secret: process.env.FB_APP_SECRET,
-        redirect_uri: payload.redirect_uri || process.env.FB_REDIRECT_URI,
+        client_id: 'FB APP ID',
+        client_secret: 'FB APP SECRET',
+        redirect_uri: payload.redirect_uri || 'REDIRECT URI',
         code: payload.authorization_code,
       },
     },

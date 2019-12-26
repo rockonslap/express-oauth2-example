@@ -101,9 +101,9 @@ const LineLoginService = async (payload, lang) => {
   
   [err, respToken] = await to(axios.post('https://api.line.me/oauth2/v2.1/token', qs.stringify({
     grant_type: 'authorization_code',
-    client_id: process.env.LINE_CLIENT_ID,
-    client_secret: process.env.LINE_CLIENT_SECRET,
-    redirect_uri: payload.redirect_uri || process.env.LINE_REDIRECT_URI,
+    client_id: 'LINE APP ID',
+    client_secret: 'LINE APP SECRET',
+    redirect_uri: payload.redirect_uri || 'REDIRECT URI',
     code: payload.authorization_code,
   }), {
     headers: {
