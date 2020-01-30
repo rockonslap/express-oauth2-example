@@ -82,7 +82,7 @@ const TokenService = async (payload, lang) => {
     }
 
     return token;
-  } if (payload.grant_type === 'refresh_token') {
+  } else if (payload.grant_type === 'refresh_token') {
     [err, refreshTokenGrantData] = await to(RefreshTokenGrantService(client, payload, lang));
     if (err) {
       return Promise.reject({
